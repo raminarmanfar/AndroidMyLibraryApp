@@ -1,6 +1,7 @@
 package com.raminarman.mylibrary;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,7 +30,7 @@ public class AllBooksActivity extends AppCompatActivity {
 
 
         booksRecView.setAdapter(adapter);
-        booksRecView.setLayoutManager(new LinearLayoutManager( this));
+        booksRecView.setLayoutManager(new GridLayoutManager( this, 2));
 
         ArrayList<Book> books = new ArrayList<>();
         books.add(new Book("Book about tigers", "Ramin", 120, "https://images.pexels.com/photos/145939/pexels-photo-145939.jpeg?cs=srgb&dl=bengal-tiger-half-soak-body-on-water-during-daytime-145939.jpg&fm=jpg", "Ramin's book."));
