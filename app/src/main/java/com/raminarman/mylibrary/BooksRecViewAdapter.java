@@ -1,6 +1,7 @@
 package com.raminarman.mylibrary;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,7 +42,9 @@ public class BooksRecViewAdapter extends RecyclerView.Adapter<BooksRecViewAdapte
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "tapped on " + books.get(position).getName() + " card.", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(context, BookDetailActivity.class);
+                intent.putExtra("bookId", books.get(position).getId());
+                context.startActivity(intent);
             }
         });
         holder.bookName.setText(books.get(position).getName());
